@@ -32,6 +32,13 @@ const themeReducer = (state, action) => {
 const store = createStore(themeReducer)
 
 class Index extends Component {
+  static childContextTypes = {
+    store: PropTypes.object
+  }
+  getChildContext () {
+    // 把store放在context
+    return { store }
+  }
   render () {
     return (
       <div>
