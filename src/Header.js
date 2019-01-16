@@ -5,6 +5,10 @@ class Header extends Component {
   static contextTypes = {
     store: PropTypes.object
   }
+  constructor () {
+    super()
+    this.state = { themeColor: '' }
+  }
   componentWillMount () {
     this._updateThemeColor()
   }
