@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import ReactDOM from 'react-dom'
 import Header from './Header'
 import Content from './Content'
+import { Provider } from './Connect'
 
 const createStore = (reducer) => {
   let state = null
@@ -49,4 +50,9 @@ class Index extends Component {
   }
 }
 
-ReactDOM.render(<Index />, document.getElementById('root'))
+ReactDOM.render(
+  <Provider store={store}>
+    <Index />
+  </Provider>,
+  document.getElementById('root')
+)
